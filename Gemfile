@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.8'
 gem 'bcrypt', '~> 3.1.7'
 gem 'simple_form'
-gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -18,6 +17,7 @@ gem 'spring',        group: :development
 
 group :development, :test do 
 	gem 'rspec-rails', '~> 2.0'
+	gem 'mysql2'
 end
 
 group :test do 
@@ -25,6 +25,11 @@ group :test do
 	gem 'shoulda-matchers', require: false
 end
 
+ 
+group :production do
+	# only necessary if using heroku for deployment.
+	# gem 'pg'
+end
 
 
 # Use unicorn as the app server
