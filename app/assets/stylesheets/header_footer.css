@@ -1,0 +1,35 @@
+/* all the style for the header and the footer*/
+
+/********************Header**************************/
+.header{
+	background-color: #33CC33;
+	padding: 20px 0;
+}
+.header h1{
+	text-align: center;
+	font-size: 70px;
+	color: #FFFFFF;
+
+}
+.log_in_out{
+	text-align: right;
+}
+.log_in_out li{
+	display: inline-block;
+	padding: 20px;
+}
+
+/**********************Container*****************************/
+
+.container{
+	width:100%;
+	background-color: #FF5050;
+	min-height: 500px;
+	padding: none;
+}
+
+/**********************Footer*****************************/
+
+.footer{
+	text-align: right;
+}

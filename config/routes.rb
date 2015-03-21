@@ -3,9 +3,10 @@ Rails.application.routes.draw do
 
   get 'user_sessions/create'
 
-  root 'users#new'
+  root 'main_page#index'
   
   resources :users
+  resources :main_page, only: [:index]
   resources :user_sessions, only: [:new, :create]
   resources :password_resets, only:[:new, :create, :edit, :update]
 

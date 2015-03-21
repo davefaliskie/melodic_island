@@ -17,3 +17,7 @@
 .form-inputs, label, input {
 	width: 300px;
 }
+body{
+	margin: 0 10%;
+	background-color: #000000;
+}
