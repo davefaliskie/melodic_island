@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require jquery.jcrop
  */
 
 .form-inputs, label, input {
@@ -19,5 +20,5 @@
 }
 body{
 	margin: 0 10%;
-	background-color: #000000;
+	background-image: linear-gradient(to bottom, #333333 0%, #B7B7B7 100%);
 }

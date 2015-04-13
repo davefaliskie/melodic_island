@@ -1,0 +1,26 @@
+<%= simple_form_for(@artist) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, label: 'Artist Name' %>
+    <%= f.input :artist_type, label: 'Type of Artist', collection: ['Individual','Band'], prompt: "Select One" %>
+    <%= f.input :genre, label: 'Genre' %>
+    <%= f.input :bio, label: 'Biography' %>
+
+    <%= f.input :cover_photo, html: { class: 'form-control'}, label: "Add a cover photo" %> 
+    <% if f.object.cover_photo? %>
+      <br>
+      <%= image_tag(f.object.cover_photo.url(:medium)) %>
+      <br>
+      <em>Current cover photo</em>
+    <% end %>
+
+  </div>
+
+  <div class="form-actions form_sign_up ">
+    <%= f.submit "Create Artist", class: "btn btn-success" %>
+  </div>
+
+  
+
+<% end %>

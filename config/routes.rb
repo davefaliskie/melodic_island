@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'user_sessions/new'
 
   get 'user_sessions/create'
@@ -6,6 +7,8 @@ Rails.application.routes.draw do
   root 'main_page#index'
   
   resources :users
+  resources :profile_pictures
+  resources :artists
   resources :main_page, only: [:index]
   resources :user_sessions, only: [:new, :create]
   resources :password_resets, only:[:new, :create, :edit, :update]

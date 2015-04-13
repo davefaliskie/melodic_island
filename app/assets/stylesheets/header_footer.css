@@ -2,7 +2,7 @@
 
 /********************Header**************************/
 .header{
-	background-color: #33CC33;
+	background-color: #0066CC;
 	padding: 20px 0;
 }
 .header h1{
@@ -16,14 +16,14 @@
 }
 .log_in_out li{
 	display: inline-block;
-	padding: 20px;
+	padding: 20px 5px;
 }
 
 /**********************Container*****************************/
 
 .container{
 	width:100%;
-	background-color: #FF5050;
+	background-color: #FFFFFF;
 	min-height: 500px;
 	padding: none;
 }

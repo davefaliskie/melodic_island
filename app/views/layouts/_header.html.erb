@@ -1,5 +1,4 @@
 <% @current_user = User.find(session[:user_id]) if session[:user_id] %>
-
 <%= link_to main_page_index_path do%>
 	<div class="header">
 		<h1>Melodic Island</h1>
@@ -8,11 +7,12 @@
 
 <div class="log_in_out">
 	<% if @current_user%>
-		<li>Welcome, <%= @current_user.full_name %></li>
-		<li><%= link_to "Log Out", logout_path, method: :delete %></li>	
+		<li><%= render :file => "app/views/profile_pictures/_icon" %></li>
+		<li><%= link_to @current_user.full_name, user_path(@current_user) %></li>
+		<li><%= link_to "Log Out", logout_path, method: :delete, class: 'btn btn-primary' %></li>	
 	<% else %>
-		<li><%= link_to "Sign Up", register_path %></li>
-		<li><%= link_to "Log In", login_path %></li>
+		<li><%= link_to "Sign Up", register_path, class: 'btn btn-primary' %></li>
+		<li><%= link_to "Log In", login_path, class: 'btn btn-primary' %></li>
 	<% end %>
 </div>
 

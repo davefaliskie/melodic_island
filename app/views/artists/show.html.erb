@@ -1,0 +1,12 @@
+<!-- The artists main page -->
+<h1>Will be the artist's main page.</h1> 
+
+<%= image_tag @current_artist.cover_photo.url(:medium) %>
+<br>
+<strong>Name: </strong><%= @current_artist.name %>
+<br>
+<strong>Type: </strong><%= @current_artist.artist_type %>
+<br>
+<strong>Genre: </strong><%= @current_artist.genre %>
+<br>
+<strong>Bio: </strong><%= safe_join(@current_artist.bio.split("\r\n"), "<br />".html_safe)%>

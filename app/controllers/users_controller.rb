@@ -10,6 +10,10 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def show
+    @current_user = User.find(session[:user_id]) if session[:user_id]
+  end
+
   # POST /users
   # POST /users.json
   def create
@@ -17,7 +21,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        session[:user_id] = @user.id
+        flash[:notice] = "Thanks for signing up!"
+        format.html { redirect_to user_path(@user)}
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -58,6 +64,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :zip_code, :latitude, :longitude, :terms_conditions)
     end
 end

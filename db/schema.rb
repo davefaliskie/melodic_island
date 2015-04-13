@@ -11,7 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150305183602) do
+ActiveRecord::Schema.define(version: 20150406213332) do
+
+  create_table "artists", force: true do |t|
+    t.string   "name"
+    t.string   "artist_type"
+    t.string   "genre"
+    t.text     "bio"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "cover_photo_file_name"
+    t.string   "cover_photo_content_type"
+    t.integer  "cover_photo_file_size"
+    t.datetime "cover_photo_updated_at"
+  end
+
+  add_index "artists", ["user_id"], name: "index_artists_on_user_id", using: :btree
+
+  create_table "profile_pictures", force: true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "asset_file_name"
+    t.string   "asset_content_type"
+    t.integer  "asset_file_size"
+    t.datetime "asset_updated_at"
+  end
+
+  add_index "profile_pictures", ["user_id"], name: "index_profile_pictures_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name"
@@ -20,8 +48,13 @@ ActiveRecord::Schema.define(version: 20150305183602) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "zip_code"
+    t.float    "latitude",         limit: 24
+    t.float    "longitude",        limit: 24
+    t.boolean  "terms_conditions"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
+  add_index "users", ["zip_code"], name: "index_users_on_zip_code", using: :btree
 
 end

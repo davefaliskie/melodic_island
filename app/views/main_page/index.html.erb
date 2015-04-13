@@ -1,4 +1,5 @@
 <!-- This the the first page users will see when they enter the site. -->
+<% @current_user = User.find(session[:user_id]) if session[:user_id] %>
 <div class="welcome">
 	<h1>Welcome to Melodic Island</h1>
 </div>
