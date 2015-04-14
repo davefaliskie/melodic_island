@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   def show
     @current_user = User.find(session[:user_id]) if session[:user_id]
+    @current_artist = Artist.find_by(user_id: @current_user)
   end
 
   # POST /users

@@ -1,4 +1,6 @@
 <!-- The artists main page -->
+<%= link_to "back", user_path(@current_user) %>
+
 <h1>Will be the artist's main page.</h1> 
 
 <%= image_tag @current_artist.cover_photo.url(:medium) %>
@@ -10,3 +12,7 @@
 <strong>Genre: </strong><%= @current_artist.genre %>
 <br>
 <strong>Bio: </strong><%= safe_join(@current_artist.bio.split("\r\n"), "<br />".html_safe)%>
+<br>
+<%= link_to "Edit Information", edit_artist_path(@current_artist), class: "btn btn-xs btn-primary" %>
+
+<h5>Add a new song!</h5>

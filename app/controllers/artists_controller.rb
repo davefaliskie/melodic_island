@@ -12,7 +12,7 @@ class ArtistsController < ApplicationController
   # GET /artists/1.json
   def show
     @current_user = User.find(session[:user_id]) if session[:user_id]
-    @current_artist = Artist.find_by(user_id: current_user)
+    @current_artist = Artist.find_by(user_id: @current_user)
   end
 
   # GET /artists/new
@@ -22,6 +22,8 @@ class ArtistsController < ApplicationController
 
   # GET /artists/1/edit
   def edit
+    @current_user = User.find(session[:user_id]) if session[:user_id]
+    @current_artist = Artist.find_by(user_id: @current_user)
   end
 
   # POST /artists

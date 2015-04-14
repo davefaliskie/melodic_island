@@ -12,12 +12,18 @@
 	<% end %>
 
 <!-- Creating an artist page -->
-<h4>This is your personal profile page. To begin uploading originial music you must first bacome an artist.</h4>
+<% if @current_user.artists.count == 0 %>
+	<h4>This is your personal profile page. To begin uploading originial music you must first bacome an artist.</h4>
+	<%= link_to "Create New Artist", new_artist_path, class: 'btn btn-success' %>
+<% else %>
+	<h4>This is your personal profile page. To visit the page for <strong><%=@current_artist.name%></strong> click the link below. </h4>
+	<%= link_to "View Artist Page", artist_path(@current_artist.id), class: 'btn btn-primary' %>
+<% end %>
 
 
-<%= link_to "Create New Artist", new_artist_path, class: 'btn btn-success' %>
 
 
+<!-- if the user id does not match the current user -->
 <% else %>
 	<%= render file: 'public/404', status: :not_found %> 
 <% end %>
