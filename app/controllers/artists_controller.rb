@@ -1,5 +1,4 @@
 class ArtistsController < ApplicationController
-  before_action :require_user
   before_action :set_artist, only: [:show, :edit, :update, :destroy]
 
   # GET /artists
@@ -24,6 +23,7 @@ class ArtistsController < ApplicationController
   def edit
     @current_user = User.find(session[:user_id]) if session[:user_id]
     @current_artist = Artist.find_by(user_id: @current_user)
+
   end
 
   # POST /artists
@@ -69,11 +69,11 @@ class ArtistsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_artist
-      @artist = Artist.find_by(params[:id])
+      @artist = Artist.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artist_params
-      params.require(:artist).permit(:name, :artist_type, :genre, :bio, :user_id, :cover_photo)
+      params.require(:artist).permit(:name, :artist_type, :genre, :bio, :user_id, :cover_photo, :id)
     end
 end

@@ -1,18 +1,26 @@
 <!-- The artists main page -->
-<%= link_to "back", user_path(@current_user) %>
 
-<h1>Will be the artist's main page.</h1> 
+<!-- ******** Information that everyone can see/ access ******** -->
+<h1><%= @artist.name %></h1>
 
-<%= image_tag @current_artist.cover_photo.url(:medium) %>
+<%= image_tag @artist.cover_photo.url(:medium) %>
 <br>
-<strong>Name: </strong><%= @current_artist.name %>
+<strong>Name: </strong><%= @artist.name %>
 <br>
-<strong>Type: </strong><%= @current_artist.artist_type %>
+<strong>Type: </strong><%= @artist.artist_type %>
 <br>
-<strong>Genre: </strong><%= @current_artist.genre %>
+<strong>Genre: </strong><%= @artist.genre %>
 <br>
-<strong>Bio: </strong><%= safe_join(@current_artist.bio.split("\r\n"), "<br />".html_safe)%>
+<strong>Bio: </strong><%= safe_join(@artist.bio.split("\r\n"), "<br />".html_safe)%>
 <br>
-<%= link_to "Edit Information", edit_artist_path(@current_artist), class: "btn btn-xs btn-primary" %>
 
-<h5>Add a new song!</h5>
+
+
+<!-- ******** Give the Artist owner more controll of the artist page. ******** -->
+
+<% if @current_artist && @current_artist.id == @artist.id %>
+	<%= link_to "Edit Information", edit_artist_path(@artist), class: "btn btn-xs btn-primary" %>
+<% end %>
+
+
+

@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20150406213332) do
     t.datetime "cover_photo_updated_at"
   end
 
-  add_index "artists", ["user_id"], name: "index_artists_on_user_id", using: :btree
+  add_index "artists", ["id"], name: "index_artists_on_id", using: :btree
 
   create_table "profile_pictures", force: true do |t|
     t.integer  "user_id"

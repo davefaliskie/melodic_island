@@ -6,6 +6,9 @@
 <% end %>
 
 <div class="log_in_out">
+
+		<li><%= link_to "Explore", artists_path, class: 'btn btn-info' %></li>
+
 	<% if @current_user%>
 		<li><%= render :file => "app/views/profile_pictures/_icon" %></li>
 		<li><%= link_to @current_user.full_name, user_path(@current_user) %></li>
@@ -14,6 +17,7 @@
 		<li><%= link_to "Sign Up", register_path, class: 'btn btn-primary' %></li>
 		<li><%= link_to "Log In", login_path, class: 'btn btn-primary' %></li>
 	<% end %>
+
 </div>
 
 <div class="container">

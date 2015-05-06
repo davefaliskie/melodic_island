@@ -9,6 +9,6 @@ class CreateArtists < ActiveRecord::Migration
     	t.timestamps
     end
     add_attachment :artists, :cover_photo
-    add_index :artists, :user_id
+    add_index :artists, :id
   end
 end

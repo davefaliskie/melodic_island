@@ -1,3 +1,16 @@
 // Place all the styles related to the artists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.artist_select{
+	background-color: #FFFF00;
+	color: #000099;
+	margin: 2%;
+	border: 5px solid #000099;
+	padding: 10px 5px;
+}
+
+.artist_select:hover{
+	background-color: #000099;
+	color: #FFFF00;
+}
