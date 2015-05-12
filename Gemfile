@@ -15,7 +15,8 @@ gem 'spring',        group: :development
 gem 'geocoder'
 gem "paperclip", "~> 4.2"
 gem "papercrop"
-gem 'aws-s3'
+gem 'aws-s3', :require => 'aws/s3'
+gem 'aws-sdk', '< 2.0'
 
 group :development, :test do 
 	gem 'rspec-rails', '~> 2.0'

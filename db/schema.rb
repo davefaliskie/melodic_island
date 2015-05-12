@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150406213332) do
+ActiveRecord::Schema.define(version: 20150511233006) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20150406213332) do
     t.float    "latitude",         limit: 24
     t.float    "longitude",        limit: 24
     t.boolean  "terms_conditions"
+    t.string   "folder"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree

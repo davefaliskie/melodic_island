@@ -3,7 +3,7 @@
 
     <% @profile_picture.each do |profile_picture| %>
     <div>
-        <%= image_tag profile_picture.asset.url(:medium), class: "img-thumbnail" %>
+        <%= image_tag profile_picture.asset.url(:medium) %>
     
         <br>
         <%= link_to 'Edit', edit_profile_picture_path(profile_picture) %>

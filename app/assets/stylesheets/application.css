@@ -22,3 +22,32 @@ body{
 	margin: 0 10%;
 	background-image: linear-gradient(to bottom, #333333 0%, #B7B7B7 100%);
 }
+
+/**************PAPERCLIP IMAGE STYLES*****************************************/
+.thumb, .large_thumb {
+	height: 50px;
+	width: 50px;
+	border-radius: 25px;
+	object-fit: cover;
+}
+.large_thumb {
+	height: 200px;
+	width: 200px;
+	border-radius: 100px;
+	object-fit: cover;
+}
+/*****************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+

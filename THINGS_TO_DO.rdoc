@@ -1,3 +1,6 @@
 * set up the password reset.
 
 * put the amazon s3 key and secret key in a lock document. (config/application.rb)
+
+* When going live, https://devcenter.heroku.com/articles/paperclip-s3 to set up S3 for heroku. 
+

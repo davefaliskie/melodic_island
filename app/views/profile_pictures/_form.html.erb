@@ -6,7 +6,7 @@
   	<%= f.input :asset, html: { class: 'form-control'}, label: "Upload a profile picture" %> 
   	<% if f.object.asset? %>
   		<br>
-  		<%= image_tag(f.object.asset.url(:small)) %>
+  		<%= image_tag(f.object.asset.url(:round), class: "large_thumb") %>
       <br>
   		<em>Currently uploaded profile picture</em>
   	<% end %>
