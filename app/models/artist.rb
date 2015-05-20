@@ -1,5 +1,6 @@
 class Artist < ActiveRecord::Base
 	belongs_to :user
+	has_many :audios
 
 # ************* cover photo *****************
 	has_attached_file :cover_photo, styles:{

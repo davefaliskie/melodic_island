@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :main_page, only: [:index]
   resources :user_sessions, only: [:new, :create]
   resources :password_resets, only:[:new, :create, :edit, :update]
+  resources :audios
 # **************************************************************************
 
 
@@ -20,12 +21,5 @@ Rails.application.routes.draw do
   delete "/logout" => "user_sessions#destroy", as: :logout
 # **************************************************************************
 
-
-# **********************SONGS***********************************************
-  match "/songs/index",   :as => "songs",   :via => :get
-  match "/songs/delete",  :as => "delete",  :via => [:get, :post]
-  match "/songs/add",     :as => "add",     :via => :get
-  match "/songs/upload",  :as => "upload",  :via => :post
-# **************************************************************************
 
 end

@@ -1,0 +1,15 @@
+<h1>Your Songs</h1>
+
+<% if @current_artist.audios.count == 0 %>
+
+	<em>You have not uploaded any songs yet</em>
+
+<% else %>
+
+	<% @audio.each do |a| %>
+		<div>
+	    	<%= a.song.url() %>
+		</div>
+	<% end %>
+
+<% end %>

@@ -10,6 +10,6 @@ Bundler.require(*Rails.groups)
 
 module MelodicIsland
   class Application < Rails::Application
-
+  	
   end
 end

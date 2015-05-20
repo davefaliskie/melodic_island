@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511233006) do
+ActiveRecord::Schema.define(version: 20150520173024) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -28,6 +28,18 @@ ActiveRecord::Schema.define(version: 20150511233006) do
   end
 
   add_index "artists", ["id"], name: "index_artists_on_id", using: :btree
+
+  create_table "audios", force: true do |t|
+    t.integer  "artist_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "song_file_name"
+    t.string   "song_content_type"
+    t.integer  "song_file_size"
+    t.datetime "song_updated_at"
+  end
+
+  add_index "audios", ["artist_id"], name: "index_audios_on_artist_id", using: :btree
 
   create_table "profile_pictures", force: true do |t|
     t.integer  "user_id"
@@ -52,7 +64,6 @@ ActiveRecord::Schema.define(version: 20150511233006) do
     t.float    "latitude",         limit: 24
     t.float    "longitude",        limit: 24
     t.boolean  "terms_conditions"
-    t.string   "folder"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree

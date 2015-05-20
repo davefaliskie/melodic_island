@@ -20,7 +20,13 @@
 
 <% if @current_artist && @current_artist.id == @artist.id %>
 	<%= link_to "Edit Information", edit_artist_path(@artist), class: "btn btn-xs btn-primary" %>
+
+<br>
+<br>
+<div>
+	<%= link_to "Add a Song", new_audio_path, class: "btn btn-success" %>
+</div>
+	<%= render file: "app/views/audios/show" %></li>
+
+
 <% end %>
-
-
-
