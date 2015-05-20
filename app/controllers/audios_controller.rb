@@ -6,7 +6,7 @@ class AudiosController < ApplicationController
   # GET /audios
   # GET /audios.json
   def index
-    @audios = Audio.all
+    @audio = Audio.all
   end
 
   # GET /audios/1

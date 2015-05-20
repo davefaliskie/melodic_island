@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
   root 'main_page#index'
+
+# ********************LOG IN************************************************
+  get 'user_sessions/new'
+  get 'user_sessions/create'
+  get "/register" => "users#new", as: :register 
+  get "/login" => "user_sessions#new", as: :login
+  delete "/logout" => "user_sessions#destroy", as: :logout
+# **************************************************************************
  
 # *******************RESOURCES********************************************** 
   resources :users
@@ -13,13 +21,7 @@ Rails.application.routes.draw do
 # **************************************************************************
 
 
-# ********************LOG IN************************************************
-  get 'user_sessions/new'
-  get 'user_sessions/create'
-  get "/register" => "users#new", as: :register 
-  get "/login" => "user_sessions#new", as: :login
-  delete "/logout" => "user_sessions#destroy", as: :logout
-# **************************************************************************
+
 
 
 end

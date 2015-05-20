@@ -26,7 +26,14 @@
 <div>
 	<%= link_to "Add a Song", new_audio_path, class: "btn btn-success" %>
 </div>
-	<%= render file: "app/views/audios/show" %></li>
-
-
+<!-- ************* Displays the songs an Artist uploaded **************************** -->
+<h1>Your Music</h1>
+	<% if @current_artist.audios.count == 0 %>
+		<em>You have not uploaded any songs yet</em>
+	<% else %>
+		<%= render file: "app/views/audios/_songs" %>
+	<% end %>
+<!-- ******************************************************************************** -->
 <% end %>
+
+<!-- !!!!!! currently does not display artists songs on their page for other users to see. -->

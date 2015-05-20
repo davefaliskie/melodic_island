@@ -1,0 +1,8 @@
+	<% @audio.each do |a| %>
+		<div>
+			<%= a.song_file_name %>
+			<audio controls>
+	    		<source src=<%= a.song.url()%> type="audio/mp3"> 
+	    	</audio>
+		</div>
+	<% end %>

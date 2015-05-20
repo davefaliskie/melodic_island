@@ -1,7 +1,3 @@
 <h1>A List of all the Songs</h1>
 
-<% @audios.each do |audio| %>
-  <div>
-      <%= audio.song.url() %>
-  </div>
-<% end %>
+<%= render file: "app/views/audios/_songs" %>
